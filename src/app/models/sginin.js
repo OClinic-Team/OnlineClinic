@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const accounts_patient = new Schema(
     {
-     user: {type: String, required: true},
-     gmail: {type: String,  required: true},
-     password: {type: String,  required: true},
-     confirm: {type: String,  required: true},
+     ID: {type: String, required: true},
+     Name: {type: String,  required: true},
+     ImageURL: {type: String,  required: true},
+     Email: {type: String,  required: true},
     },
     {
       timestamps: true

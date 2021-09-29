@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var cookieParser = require('cookie-parser')
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const methodOverride = require('method-override');
@@ -57,6 +58,7 @@ app.use(
     }),
 );
 app.use(express.json());
+app.use(cookieParser())
 
 app.use(morgan('combined'));
 
