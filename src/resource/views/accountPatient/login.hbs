@@ -1,6 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -9,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id" content="154830231299-9c1ohuri3p7gu8ouo8lj7tpl1pse1gp2.apps.googleusercontent.com">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
@@ -16,9 +18,12 @@
 </head>
 <body>
     <div id="logreg-forms">
-        <form class="form-signin">
+        <form method="POST" action="/accountPatient/login" class="form-signin">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
             <div class="social-login">
+                <a href="/">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                </a>
                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
                 <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
             </div>
@@ -88,5 +93,11 @@ $(()=>{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+                 var id_token = googleUser.getAuthResponse().id_token;
+                 
+                }
+    </script>
 </body>
 </html>

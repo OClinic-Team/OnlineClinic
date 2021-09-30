@@ -8,6 +8,17 @@ class PatientController {
 
     login(req, res) {
         res.render('accountPatient/login');
+          // Cookies that have not been signed
+         console.log('Cookies: ', req.cookies)
+
+     // Cookies that have been signed
+         console.log('Signed Cookies: ', req.signedCookies)
+    }
+
+
+    dangnhap(req,res)
+    {
+        
     }
 
     //[Get] accountPatient/sginin
@@ -19,8 +30,7 @@ class PatientController {
     danki(req, res, next) {
         const account = new account_patient(req.body);
         account.save();
-
-        res.send('được rồi đó');
+        res.send('/accountPatient/login');
     }
 }
 
