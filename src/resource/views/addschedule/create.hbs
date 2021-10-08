@@ -1,34 +1,59 @@
 <div class='mt-4 container'>
   <H3>Đăng Ký Lịch Làm</H3>
-  <form method='POST' action='/accounts/store'>
+  <form method='POST' action='#'>
     <div class='form-group'>
-      <label for='name'>Chọn ngày</label>
-        <div class="col-lg-4 col-md-9 col-sm-12">
-            <input type="datepicker" class="form-control" readonly placeholder="Chọn ngày"/>
+      <p style='font-weight:bold;color:black'>Thứ 2</p>
+      <div id="current-time"></div>
+      <script>
+        var curDate = new Date();
+        // Ngày hiện tại
+        var curDay = curDate.getDate() ;
+        // Tháng hiện tại
+        var curMonth = curDate.getMonth() + 1;
+        // Năm hiện tại
+        var curYear = curDate.getFullYear();
+        // Gán vào thẻ HTML
+        document.getElementById('current-time').innerHTML = curDay + "/" + curMonth + "/" + curYear;
+      </script>
+        <div style='font-size:20px' class="time"> 
+          <p style='font-weight:bold;color:black'>Chọn thời gian làm việc</p>
+          <div class="time_morning">
+            <p style='font-weight:bold;color:black' >Sáng</p>
+            <input type="checkbox" id="time1" name="time1" value="7:00-8:00">
+            <label for="time1"> 7:00-8:00</label>
+            <input type="checkbox" id="time2" name="time2" value="8:00-9:00">
+            <label for="time2"> 8:00-9:00</label>
+            <input type="checkbox" id="time3" name="time3" value="9:00-10:00">
+            <label for="time3"> 9:00-10:00</label>
+            <input type="checkbox" id="time4" name="time4" value="10:00-11:00">
+            <label for="time4"> 10:00-11:00</label>
+          </div>
+          <div class="time_afternoon">
+            <p style='font-weight:bold;color:black' >Chiều</p>
+            <input type="checkbox" id="time5" name="time5" value="13:00-14:00">
+            <label for="time5"> 13:00-14:00</label>
+            <input type="checkbox" id="time6" name="time6" value="14:00-15:00">
+            <label for="time6"> 14:00-15:00</label>
+            <input type="checkbox" id="time7" name="time7" value="15:00-16:00">
+            <label for="time7"> 15:00-16:00</label>
+            <input type="checkbox" id="time8" name="time8" value="16:00-17:00">
+            <label for="time8"> 16:00-17:00</label>
+          </div>
+          <div class="time_night">
+            <p style='font-weight:bold;color:black' >Tối</p>
+            <input type="checkbox" id="time9" name="time9" value="17:00-18:00">
+            <label for="time9"> 17:00-18:00</label>
+            <input type="checkbox" id="time10" name="time10" value="18:00-19:00">
+            <label for="time10"> 18:00-19:00</label>
+            <input type="checkbox" id="time11" name="time11" value="19:00-20:00">
+            <label for="time11"> 19:00-20:00</label>
+            <input type="checkbox" id="time12" name="time12" value="20:00-21:00">
+            <label for="time12"> 20:00-21:00</label>
+            <input type="checkbox" id="time13" name="time13" value="21:00-22:00">
+            <label for="time13"> 21:00-22:00</label>
+          </div>     
         </div>
     </div>
-    <div class='form-group'>
-      <label for='name'>Thời gian</label>
-        <div class="col-lg-4 col-md-9 col-sm-12">
-            <input type="timepicker" class="form-control" readonly placeholder="Chọn thời gian"/>
-        </div>
-    </div>
-   <button type='Select' class='btn-select'>Chọn</button>
-    <div class='form-group'>
-      <label for='name'>Lịch</label>
-    </div>
-    <button type='submit' class='btn-submit'>Đăng Ký</button> 
+    <button type='submit' class='btn-Da'>Đăng Ký</button> 
   </form>
 </div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-  flatpickr("input[type=datepicker]", {});
-</script>
-<script>
-  flatpickr("input[type=timepicker]", {
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-  });
-</script>
